@@ -202,7 +202,7 @@ func parseAfrogInfo(text, filename string) (id, name string) {
 
 func checkNuclei() CheckResult {
 	result := CheckResult{Source: "Nuclei"}
-	owner, repo := "WHOAMI-xiaoyu", "nuclei-templates"
+	owner, repo := "projectdiscovery", "nuclei-templates"
 	now := utcNow()
 	since := isoFormat(now.Add(-24 * time.Hour))
 	until := isoFormat(now)
@@ -263,7 +263,7 @@ func checkNuclei() CheckResult {
 
 func checkAwesome() CheckResult {
 	result := CheckResult{Source: "Awesome-POC"}
-	owner, repo := "WHOAMI-xiaoyu", "Awesome-POC"
+	owner, repo := "Threekiii", "Awesome-POC"
 	now := utcNow()
 	since := isoFormat(now.Add(-24 * time.Hour))
 	until := isoFormat(now)

@@ -21,7 +21,9 @@
       "Read(//e/code/VSCode/VulnMonitor-Go/**)",
       "Read(//e/code/VSCode/**)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ],
     "additionalDirectories": [
       "E:\\code\\VSCode\\VulnMonitor-Go\\VulnMonitor"
