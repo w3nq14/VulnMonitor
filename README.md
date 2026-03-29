@@ -13,6 +13,68 @@
 - 🌙 夜间休眠模式（00:00-07:00 自动暂停）
 - 💣 POC/EXP 监控，实时追踪最新漏洞利用代码
 
+## POC/EXP 监控
+
+VulnMonitor 内置 POC/EXP 监控模块，自动追踪 GitHub 上最新的漏洞利用代码。
+
+### 监控源
+
+- **nuclei-templates** - ProjectDiscovery 的 Nuclei 漏洞模板库
+- **Awesome-POC** - 精选 POC 集合
+- **afrog-pocs** - afrog 漏洞扫描器 POC 库
+- **eeeeeeeeee-POC** - 综合 POC 仓库
+- **Exploit-DB** - 官方漏洞利用数据库
+- **ExpKu** - 中文漏洞利用库
+
+### 配置
+
+编辑 `poc/WatchPoc.go` 配置文件：
+
+```go
+const (
+    proxyURL   = "http://127.0.0.1:10808"  // 代理地址（可选）
+    sleepHours = 24                         // 检查间隔（小时）
+    webhookURL = "http://127.0.0.1:1111/webhook"  // Webhook 推送地址
+)
+
+var githubToken = "your_github_token"  // GitHub Token（必填）
+```
+
+**获取 GitHub Token：**
+1. 访问 https://github.com/settings/tokens
+2. 生成新 token（只需 `public_repo` 权限）
+3. 填入配置文件
+
+### 运行
+
+**单独运行：**
+
+```bash
+cd poc
+go run WatchPoc.go
+```
+
+**使用 run.bat 一键启动（Windows）：**
+
+```bash
+run.bat
+```
+
+该脚本会同时启动：
+- 漏洞监控主程序
+- POC/EXP 监控
+- Webhook 接收器
+
+日志文件保存在 `log/` 目录下。
+
+### 推送格式
+
+POC 更新会通过 Webhook 推送，包含：
+- 更新时间
+- 仓库名称
+- 新增 POC 数量
+- POC ID 和标题列表
+
 ## 数据源
 
 | 名称 | 地址 | 推送策略 |
