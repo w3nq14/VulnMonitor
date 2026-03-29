@@ -318,7 +318,7 @@ func checkAwesome() CheckResult {
 
 func checkAfrog() CheckResult {
 	result := CheckResult{Source: "Afrog-POCs"}
-	owner, repo := "WHOAMI-xiaoyu", "afrog-pocs"
+	owner, repo := "zan8in", "afrog-pocs"
 	now := utcNow()
 	since := isoFormat(now.Add(-24 * time.Hour))
 	until := isoFormat(now)
@@ -375,7 +375,7 @@ func checkAfrog() CheckResult {
 
 func checkEeee() CheckResult {
 	result := CheckResult{Source: "eeeeeeeeee-POC"}
-	owner, repo := "WHOAMI-xiaoyu", "POC"
+	owner, repo := "eeeeeeeeee-code", "POC"
 	now := utcNow()
 	since := isoFormat(now.Add(-24 * time.Hour))
 	until := isoFormat(now)
