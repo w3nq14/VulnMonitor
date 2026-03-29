@@ -2,7 +2,7 @@
 
 自动监控并推送高价值安全漏洞信息，过滤掉 CVE 库中 99% 的无意义编号，只关注真正需要注意的漏洞。
 
-![app](./.github/assets/app.jpg)
+![app](./.github/assets/web.jpg)
 
 ## 功能特性
 

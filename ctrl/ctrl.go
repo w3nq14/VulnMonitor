@@ -597,7 +597,7 @@ func (w *WatchVulnApp) testPushMessage() error {
 		Provider:       providers,
 		FailedProvider: failed,
 	}
-	if err := w.textPusher.PushMarkdown("WatchVuln 初始化完成", push.RenderInitialMsg(msg)); err != nil {
+	if err := w.textPusher.PushMarkdown("VulnMonitor 初始化完成", push.RenderInitialMsg(msg)); err != nil {
 		return err
 	}
 	if err := w.rawPusher.PushRaw(push.NewRawInitialMessage(msg)); err != nil {
@@ -607,14 +607,14 @@ func (w *WatchVulnApp) testPushMessage() error {
 
 	// push a mocked vuln
 	v := &grab.VulnInfo{
-		Title:        "Watchvuln 代码执行漏洞",
+		Title:        "VulnMonitor 代码执行漏洞",
 		CVE:          "CVE-2033-9096",
 		Severity:     "严重",
 		Tags:         []string{"POC公开", "源码公开", "技术细节公开"},
 		Disclosure:   "2033-06-30",
 		From:         "https://github.com/zema1",
 		Reason:       []string{"created"},
-		Description:  "Watchvuln 存在代码执行漏洞，只要你想二开，那么就一定需要执行它原本的代码",
+		Description:  "VulnMonitor 存在代码执行漏洞，只要你想二开，那么就一定需要执行它原本的代码",
 		GithubSearch: []string{"https://github.com/search?q=watchvuln&ref=opensearch&type=repositories"},
 		References:   []string{"https://github.com/zema1/watchvuln/issues/127"},
 		Solutions:    "1. 升级到最新版本\n2. 赞助作者",
@@ -625,7 +625,7 @@ func (w *WatchVulnApp) testPushMessage() error {
 	w.log.Infof("mocked vuln message pushed")
 
 	// push stop message
-	info := "WatchVuln 测试结束，进程即将退出"
+	info := "VulnMonitor 测试结束，进程即将退出"
 	if err := w.textPusher.PushText(info); err != nil {
 		return err
 	}

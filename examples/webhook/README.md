@@ -16,15 +16,15 @@ webhook 的数据统一使用 json 格式发送，最外层的定义为:
 
 `type` 表示当前数据的类型。目前有如下三个类型的值:
 
-- `watchvuln-initial` 初始化信息
-- `watchvuln-text` 简易文本信息
-- `watchvuln-vulninfo` 漏洞信息
+- `VulnMonitor-initial` 初始化信息
+- `VulnMonitor-text` 简易文本信息
+- `VulnMonitor-vulninfo` 漏洞信息
 
-当 `type` 为 `watchvuln-initial` 时, `content` 为 `push.InitialMessage`
+当 `type` 为 `VulnMonitor-initial` 时, `content` 为 `push.InitialMessage`
 
 ```json
 {
-  "type": "watchvuln-initial",
+  "type": "VulnMonitor-initial",
   "content": {
     "version": "v0.9.0",
     "vuln_count": 300,
@@ -41,22 +41,22 @@ webhook 的数据统一使用 json 格式发送，最外层的定义为:
 }
 ```
 
-当 `type` 为 `watchvuln-text` 时, `content` 为 `push.TextMessage`
+当 `type` 为 `VulnMonitor-text` 时, `content` 为 `push.TextMessage`
 
 ```json
 {
-  "type": "watchvuln-text",
+  "type": "VulnMonitor-text",
   "content": {
-    "message": "注意: WatchVuln 进程退出"
+    "message": "注意: VulnMonitor 进程退出"
   }
 }
 ```
 
-当 `type` 为 `watchvuln-vulninfo` 时, `content` 为 `grab.VulnInfo`
+当 `type` 为 `VulnMonitor-vulninfo` 时, `content` 为 `grab.VulnInfo`
 
 ```json
 {
-  "type": "watchvuln-vulninfo",
+  "type": "VulnMonitor-vulninfo",
   "content": {
     "unique_key": "MPS-kaz2-jmpq",
     "title": "Apache Cassandra 存在越权漏洞导致远程命令执行",
