@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat -ano)",
+      "Bash(findstr \":1111\")",
+      "Bash(tasklist)",
+      "Bash(findstr /i \"go.exe\")",
+      "Bash(taskkill /F /PID 8804)",
+      "Bash(taskkill /F /IM go.exe)",
+      "Bash(taskkill //F //PID 8804)",
+      "Bash(taskkill //F //IM go.exe)",
+      "Bash(mkdir -p log)",
+      "Bash(ls -la log_*.txt)",
+      "Bash(dir log_*.txt)",
+      "Bash(findstr \"go.exe\")",
+      "Bash(handle log_watchpoc.txt)",
+      "Bash(rm -f log_watchpoc.txt log_watchpoc_err.txt)",
+      "Bash(del /F log_watchpoc.txt log_watchpoc_err.txt)",
+      "Bash(powershell -Command \"Get-Process | Where-Object {$_Path -like ''*go.exe''} | Stop-Process -Force\")",
+      "Bash(powershell -Command \"Remove-Item -Path ''log_watchpoc.txt'',''log_watchpoc_err.txt'' -Force -ErrorAction SilentlyContinue; Get-ChildItem log_*.txt\")",
+      "Read(//e/code/VSCode/VulnMonitor-Go/**)",
+      "Read(//e/code/VSCode/**)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "additionalDirectories": [
+      "E:\\code\\VSCode\\VulnMonitor-Go\\VulnMonitor"
+    ]
+  }
+}
