@@ -34,3 +34,8 @@ watchvuln
 log/
 log_*.txt
 .pids.tmp
+
+# Sensitive config
+poc/config.go
+*token*
+*secret*
